@@ -47,29 +47,9 @@ class Menu extends CI_Model
     }
 
 
-    function deleteGroupe($groupe)
-    {
-        $groupTabMod = $this->ReadJson();
-        for ($i = 0; $i < count($groupTabMod); $i++) {
-            if ($groupTabMod[$i]->type == $groupe) {
-                unset($groupTabMod[$i]);
-                $groupTab = array_values($groupTabMod);
-            }
-        }
-    }
+ 
 
 
-function reordonner($groupe){
-    $groupeTabMod =  $this->GetMenuDunGroupe($groupe);
-    $this->deleteGroupe($groupe);
-    $count= count($groupeTabMod)-1;
-    $max = $groupeTabMod[$_POST[$count."indice"]];
-    for ($i = 0; $i < $max; $i++) {
-        if ($i = $_POST[$i."indice"]) {
-            $this->addAccess($groupeTabMod[$i]);
-        }
-    }
-}
 function deleteAccess($id)
 {
     //   print_r($id);
